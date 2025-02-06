@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private float force = 1f;
     [SerializeField] private Transform ballAnchor;
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private Transform launchIndicator;
 
     private Rigidbody ballRB;
 
@@ -35,7 +37,14 @@ public class BallController : MonoBehaviour
 
         // remove ball from player anchor 
         transform.parent = null;
+
+        //using angle of arrow to launch ball
+        ballRB.AddForce(launchIndicator.forward * force, ForceMode.Impulse);
+        launchIndicator.gameObject.SetActive(false);
+
         ballRB.isKinematic = false;
+        //launchIndicator.gameObject.SetActive(false);
+
         //add force to ball
         ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
     }
