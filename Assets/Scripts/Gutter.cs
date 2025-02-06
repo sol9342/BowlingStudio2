@@ -1,16 +1,21 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal.Internal;
 
 public class Gutter : MonoBehaviour
 {
+    //private bool isColliding;
     private void OnTriggerEnter(Collider triggeredBody)
-    {
+    { 
+        /*
+        if(isColliding) return;
+        isColliding=true;
+        */
         Debug.Log("Gutter triggered");
         // get rigidbody of ball and store it in local variable
         Rigidbody ballRigidBody = triggeredBody.GetComponent<Rigidbody>();
 
         // store the velocity magnitude before resetting velocity
         float velocityMagnitude = ballRigidBody.linearVelocity.magnitude;
+        Debug.Log(velocityMagnitude);
 
         // need to reset linear AND angular velocity (ball is rotating on ground when moving)
         ballRigidBody.linearVelocity = Vector3.zero;
@@ -20,7 +25,13 @@ public class Gutter : MonoBehaviour
 
         // add force in the forward direction of the Gutter
         // use the saved velocity magniture for some realism
-        ballRigidBody.AddForce(transform.forward *velocityMagnitude, ForceMode.VelocityChange);
+        ballRigidBody.AddForce(transform.up * velocityMagnitude, ForceMode.VelocityChange);
+        //Debug.Log(ballRigidBody.linearVelocity.magnitude);
     }
-    
+    /*
+    void Update()
+    {
+        isColliding = false;
+    }
+    */
 }
