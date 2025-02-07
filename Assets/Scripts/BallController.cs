@@ -26,23 +26,10 @@ public class BallController : MonoBehaviour
 
         // reset the state
         ResetBall();
-
-        /*
-        transform.parent = ballAnchor;
-        transform.localPosition = Vector3.zero;
-        ballRB.isKinematic = true;
-        */
     }
 
     public void ResetBall()
     {
-        /*
-        isBallLaunched = false;
-        ballRB.isKinematic = true;
-        launchIndicator.gameObject.SetActive(true);
-        transform.parent = ballAnchor;
-        transform.localPosition = Vector3.zero;
-        */
         isBallLaunched = false;
         transform.parent = ballAnchor;
         transform.localPosition = Vector3.zero;
@@ -61,10 +48,6 @@ public class BallController : MonoBehaviour
         transform.parent = null;
 
         ballRB.isKinematic = false;
-        //launchIndicator.gameObject.SetActive(false);
-
-        //add force to ball
-        //ballRB.AddForce(transform.forward * force, ForceMode.Impulse);
 
          //using angle of arrow to launch ball
         ballRB.AddForce(launchIndicator.forward * force, ForceMode.Impulse);

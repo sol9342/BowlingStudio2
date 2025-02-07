@@ -17,15 +17,6 @@ public class GameManager : MonoBehaviour
     {
         inputManager.OnResetPressed.AddListener(HandleReset);
         SetPins();
-        // find all objects of type FallTrigger
-        /*
-        pins = FindObjectsByType<FallTrigger>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-
-        foreach(FallTrigger pin in pins)
-        {
-            pin.OnPinFall.AddListener(IncrementScore);
-        }
-        */
     }
 
     private void HandleReset()
