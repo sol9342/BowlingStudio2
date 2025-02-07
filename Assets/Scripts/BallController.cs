@@ -36,11 +36,18 @@ public class BallController : MonoBehaviour
 
     public void ResetBall()
     {
+        /*
         isBallLaunched = false;
         ballRB.isKinematic = true;
         launchIndicator.gameObject.SetActive(true);
         transform.parent = ballAnchor;
         transform.localPosition = Vector3.zero;
+        */
+        isBallLaunched = false;
+        transform.parent = ballAnchor;
+        transform.localPosition = Vector3.zero;
+        ballRB.isKinematic = true;
+        launchIndicator.gameObject.SetActive(true);
     }
 
     private void LaunchBall()
