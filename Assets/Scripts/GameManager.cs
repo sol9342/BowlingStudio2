@@ -1,0 +1,24 @@
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] private float score = 0;
+    private FallTrigger[] pins;
+
+    private void Start()
+    {
+        // find all objects of type FallTrigger
+        pins = FindObjectsByType<FallTrigger>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach(FallTrigger pin in pins)
+        {
+            pin.OnPinFall.AddListener(IncrementScore);
+        }
+    }
+
+    private void IncrementScore()
+    {
+        score++;
+    }
+
+}
