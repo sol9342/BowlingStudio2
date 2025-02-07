@@ -903,7 +903,7 @@ GameObject:
   - component: {fileID: 910742247}
   m_Layer: 7
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b59729c9d24e84f9a5c5b3767d4233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30
+  force: 25
   ballAnchor: {fileID: 1739587733}
   inputManager: {fileID: 1639585992}
   launchIndicator: {fileID: 434525719}
@@ -1936,8 +1936,8 @@ GameObject:
   - component: {fileID: 1740174245}
   - component: {fileID: 1740174244}
   m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
+  m_Name: Ground
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2152,7 +2152,7 @@ Transform:
   m_GameObject: {fileID: 2000740012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.96, y: 0.11, z: 31.36}
+  m_LocalPosition: {x: -7.96, y: 0.11, z: 4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
